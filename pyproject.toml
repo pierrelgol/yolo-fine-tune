@@ -1,0 +1,108 @@
+[project]
+name = "yolo-fine-tune"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.12"
+dependencies = []
+
+[tool.pyright]
+# TODO(jochumdev): find a method to report "implicit" any
+reportAny = "hint"
+reportExplicitAny = "hint"
+
+[tool.ruff]
+exclude = [".venv", ".git", ".ruff_cache", ".vscode", ".helix"]
+# line-length = 88
+# target-version = "py310"
+
+# From: https://github.com/fastapi/fastapi/blob/master/pyproject.toml
+[tool.ruff.lint]
+# select = [
+#   "E",  # pycodestyle errors
+#   "W",  # pycodestyle warnings
+#   "F",  # pyflakes
+#   "I",  # isort
+#   "B",  # flake8-bugbear
+#   "C4",  # flake8-comprehensions
+#   "UP",  # pyupgrade
+# ]
+select = [
+  "F",
+  "E",
+  "W",
+  # TODO(jochumdev): enable this!
+  #  "D",
+  "S",
+  "UP",
+  "PL",
+  "ERA",
+  "YTT",
+  "ANN",
+  "ASYNC",
+  "BLE",
+  "B",
+  "A",
+  "C4",
+  "DTZ",
+  "T10",
+  "EM",
+  "EXE",
+  "FIX",
+  "INT",
+  "ISC",
+  "ICN",
+  "LOG",
+  "G",
+  "PIE",
+  "T20",
+  "PYI",
+  "PT",
+  "Q",
+  "RSE",
+  "RET",
+  "SLF",
+  "SIM",
+  "SLOT",
+  "TID",
+  "TD",
+  "TC",
+  "ARG",
+  "PTH",
+  "FLY",
+  "I",
+  "C90",
+  "N",
+  "PERF",
+  "FURB",
+  "RUF",
+  "TRY",
+]
+preview = true
+ignore = [
+  # "E501",  # Line length
+  "B008",  # do not perform function calls in argument defaults
+  "C901",  # too complex
+  "W191",  # indentation contains tabs
+  # TODO(jochumdev): enable this
+  "ANN401",
+  "TD003",  # https://docs.astral.sh/ruff/rules/TD003 - https://docs.astral.sh/ruff/rules/missing-todo-link/
+  # "TC002",  # https://docs.astral.sh/ruff/rules/typing-only-third-party-import/
+  # "TC003",  # https://docs.astral.sh/ruff/rules/typing-only-standard-library-import/
+]
+
+[tool.ruff.lint.pylint]
+max-public-methods = 25
+
+[tool.ruff.lint.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.ruff.format]
+preview = true
+
+[tool.uv.workspace]
+members = ["packages/*"]
