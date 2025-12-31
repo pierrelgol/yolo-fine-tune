@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/main.py
+src/yolo_fine_tune.egg-info/PKG-INFO
+src/yolo_fine_tune.egg-info/SOURCES.txt
+src/yolo_fine_tune.egg-info/dependency_links.txt
+src/yolo_fine_tune.egg-info/entry_points.txt
+src/yolo_fine_tune.egg-info/requires.txt
+src/yolo_fine_tune.egg-info/top_level.txt

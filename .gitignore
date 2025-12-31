@@ -1,0 +1,25 @@
+# Environments
+.venv/
+__pycache__/
+*.py[cod]
+
+# Project Specific Generated Files
+datasets/
+dataset/
+predictions/
+runs/
+wandb/
+augments/
+ingest/
+src/
+
+# Weights
+*.pt
+
+# IDEs
+.vscode/
+.idea/
+.claude/
+
+# UV
+# (uv.lock is tracked for reproducibility)
